@@ -1,11 +1,27 @@
+import { Box, Flex, Heading, Paragraph } from '@contentful/f36-components';
+import { css } from '@emotion/css';
+
+import { ContentfulImage } from '../../../components/shared/ContentfulImage';
 import { apiClient } from '../../../lib/contentfulApi';
 
+const styles = {
+  container: css``,
+  content: css`
+    max-width: 1280px;
+    margin: auto;
+  `,
+};
+
 const BlogPost = ({ data }) => {
-  const { title } = data.fields;
+  const { title, content, image } = data.fields;
   return (
-    <>
-      <h1>{title}</h1>
-    </>
+    <Flex className={styles.container}>
+      <Box className={styles.content}>
+        <ContentfulImage image={image} />
+        <Heading marginBottom="spacingXl">{title}</Heading>
+        <Paragraph>{content}</Paragraph>
+      </Box>
+    </Flex>
   );
 };
 
