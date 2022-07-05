@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { apiClient } from '@/lib/contentfulApi';
+import { apiClient } from '../../lib/contentfulApi';
 
 const Home = ({ data }) => {
   const { title, highlightedPosts } = data.fields;

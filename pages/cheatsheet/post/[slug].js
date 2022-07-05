@@ -1,4 +1,4 @@
-import { apiClient } from '@/lib/contentfulApi';
+import { apiClient } from '../../../lib/contentfulApi';
 
 const BlogPost = ({ data }) => {
   const { title } = data.fields;
@@ -15,6 +15,7 @@ export const getStaticProps = async ({ params }) => {
   if (!slug) {
     return {
       notFound: true,
+      revalidate: 60,
     };
   }
 
@@ -28,6 +29,7 @@ export const getStaticProps = async ({ params }) => {
   if (!blogPostEntry) {
     return {
       notFound: true,
+      revalidate: 60,
     };
   }
 
