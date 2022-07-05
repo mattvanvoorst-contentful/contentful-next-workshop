@@ -12,6 +12,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@contentful/f36-components": "^4.10.5",
     "contentful": "^9.1.32",
     "dept-react-scripts": "^1.2.2",
     "next": "12.2.0",
