@@ -1,3 +1,4 @@
+import { Heading } from '@contentful/f36-components';
 import Link from 'next/link';
 
 import { apiClient } from '../../lib/contentfulApi';
@@ -7,7 +8,7 @@ const Home = ({ data }) => {
 
   return (
     <>
-      <h1>{title}</h1>
+      <Heading marginBottom="spacingXl">{title}</Heading>
       {highlightedPosts.map(item => {
         return (
           <Link key={item.sys.id} href={`/cheatsheet/post/${item.fields.slug}`}>
